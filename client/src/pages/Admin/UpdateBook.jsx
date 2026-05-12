@@ -75,7 +75,7 @@ function UpdateBook() {
           const response =
             await axios.get(
 
-              `http://localhost:1000/api/v1/get-book-by-id/${id}`
+              `${import.meta.env.VITE_API_URL}/api/v1/get-book-by-id/${id}`
             );
 
           setData({
@@ -194,7 +194,7 @@ function UpdateBook() {
         const response =
           await axios.put(
 
-            `http://localhost:1000/api/v1/update-book/${id}`,
+            `${import.meta.env.VITE_API_URL}/api/v1/update-book/${id}`,
 
             {
 

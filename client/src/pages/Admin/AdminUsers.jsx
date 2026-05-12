@@ -35,7 +35,7 @@ function AdminUsers() {
           const response =
             await axios.get(
 
-              "http://localhost:1000/api/v1/get-all-users",
+              `${import.meta.env.VITE_API_URL}/api/v1/get-all-users`,
 
               {
                 headers,
@@ -71,7 +71,7 @@ function AdminUsers() {
       const response =
         await axios.put(
 
-          `http://localhost:1000/api/v1/block-user/${id}`,
+          `${import.meta.env.VITE_API_URL}/api/v1/block-user/${id}`,
 
           {},
 
@@ -117,7 +117,7 @@ function AdminUsers() {
       const response =
         await axios.put(
 
-          `http://localhost:1000/api/v1/unblock-user/${id}`,
+          `${import.meta.env.VITE_API_URL}/api/v1/unblock-user/${id}`,
 
           {},
 

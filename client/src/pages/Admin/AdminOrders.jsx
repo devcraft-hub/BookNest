@@ -44,7 +44,7 @@ function AdminOrders() {
         const response =
           await axios.get(
 
-            "http://localhost:1000/api/v1/get-all-orders",
+            `${import.meta.env.VITE_API_URL}/api/v1/get-all-orders`,
 
             {
               headers,
@@ -86,7 +86,7 @@ function AdminOrders() {
         const response =
           await axios.put(
 
-            `http://localhost:1000/api/v1/update-status/${id}`,
+            `${import.meta.env.VITE_API_URL}/api/v1/update-status/${id}`,
 
             {
               status,
@@ -186,7 +186,7 @@ function AdminOrders() {
         const response =
           await axios.delete(
 
-            `http://localhost:1000/api/v1/delete-order/${id}`,
+            `${import.meta.env.VITE_API_URL}/api/v1/delete-order/${id}`,
 
             {
               headers,
