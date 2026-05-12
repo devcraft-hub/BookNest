@@ -2,6 +2,9 @@ import React, { useState } from "react";
 
 import { Link, useNavigate } from "react-router-dom";
 
+import { toast }
+from "react-toastify";
+
 import axios from "axios";
 
 import {
@@ -84,13 +87,13 @@ function Login() {
         })
       );
 
-      alert("Login Successful");
+      toast.success("Login Successful");
 
       navigate("/");
 
     } catch (error) {
 
-      alert(error.response.data.message);
+      toast.error(error.response.data.message);
     }
   };
 
@@ -124,7 +127,7 @@ function Login() {
         })
       );
 
-      alert("Google Login Successful");
+      toast.success("Google Login Successful");
 
       navigate("/");
 

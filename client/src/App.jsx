@@ -49,6 +49,16 @@ import { useDispatch } from "react-redux";
 
 import { authActions } from "./store/auth";
 
+// =====================
+// TOASTIFY
+// =====================
+
+import {
+  ToastContainer,
+} from "react-toastify";
+
+import "react-toastify/dist/ReactToastify.css";
+
 function App() {
 
   const dispatch = useDispatch();
@@ -341,6 +351,18 @@ function App() {
         {/* ===================== */}
 
         <Footer />
+
+        {/* ===================== */}
+        {/* TOAST CONTAINER */}
+        {/* ===================== */}
+
+        <ToastContainer
+          position="top-right"
+          autoClose={3000}
+          theme="dark"
+          newestOnTop={true}
+          pauseOnHover={false}
+        />
 
       </div>
 

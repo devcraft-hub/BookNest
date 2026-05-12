@@ -10,6 +10,9 @@ import {
   useNavigate,
 } from "react-router-dom";
 
+import { toast }
+from "react-toastify";
+
 import Loader from "../../components/Loader/Loader";
 
 function UpdateBook() {
@@ -182,9 +185,7 @@ function UpdateBook() {
 
         ) {
 
-          alert(
-            "All fields are required"
-          );
+          toast.error("All fields are required");
 
           setUpdating(false);
 
@@ -212,17 +213,13 @@ function UpdateBook() {
             }
           );
 
-        alert(
-          response.data.message
-        );
+        toast.success(response.data.message);
 
         navigate("/all-books");
 
       } catch (error) {
 
-        alert(
-          error.response?.data?.message
-        );
+        toast.error(error.response?.data?.message);
 
       } finally {
 

@@ -3,6 +3,8 @@ import React, { useState } from "react";
 import axios from "axios";
 
 import { useNavigate } from "react-router-dom";
+import { toast }
+from "react-toastify";
 
 function AddBook() {
 
@@ -99,9 +101,7 @@ function AddBook() {
 
       ) {
 
-        alert(
-          "All fields are required"
-        );
+        toast.error("All fields are required");
 
         setLoading(false);
 
@@ -112,9 +112,7 @@ function AddBook() {
 
       if (data.price <= 0) {
 
-        alert(
-          "Price must be greater than 0"
-        );
+        toast.error("Price must be greater than 0");
 
         setLoading(false);
 
@@ -123,9 +121,7 @@ function AddBook() {
 
       if (data.stock < 0) {
 
-        alert(
-          "Stock cannot be negative"
-        );
+        toast.error("Stock cannot be negative");
 
         setLoading(false);
 
@@ -161,7 +157,7 @@ function AddBook() {
         }
       );
 
-      alert(response.data.message);
+      toast.success(response.data.message);
 
       // clear form
 
@@ -200,9 +196,7 @@ function AddBook() {
 
     } catch (error) {
 
-      alert(
-        error.response?.data?.message
-      );
+      toast.error(error.response?.data?.message);
 
     } finally {
 

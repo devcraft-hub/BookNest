@@ -7,6 +7,9 @@ import axios from "axios";
 
 import Loader from "../../components/Loader/Loader";
 
+import { toast }
+from "react-toastify";
+
 function AdminOrders() {
 
   const [orders,
@@ -97,7 +100,7 @@ function AdminOrders() {
             }
           );
 
-        alert(
+        toast.success(
           response.data.message
         );
 
@@ -154,7 +157,7 @@ function AdminOrders() {
 
       } catch (error) {
 
-        alert(
+        toast.error(
           error.response?.data
             ?.message
         );
@@ -193,7 +196,7 @@ function AdminOrders() {
             }
           );
 
-        alert(
+        toast.success(
           response.data.message
         );
 
@@ -211,7 +214,7 @@ function AdminOrders() {
 
       } catch (error) {
 
-        alert(
+        toast.error(
           error.response?.data
             ?.message
         );

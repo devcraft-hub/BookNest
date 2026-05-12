@@ -5,6 +5,8 @@ import axios from "axios";
 import Loader from "../Loader/Loader";
 
 import { Link } from "react-router-dom";
+import { toast }
+from "react-toastify";
 
 function Favourites() {
 
@@ -64,7 +66,7 @@ function Favourites() {
         }
       );
 
-      alert(response.data.message);
+   toast.success(response.data.message)
 
       // update UI instantly
 

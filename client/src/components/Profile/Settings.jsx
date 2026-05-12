@@ -1,4 +1,6 @@
 import React, { useState } from "react";
+import { toast }
+from "react-toastify";
 
 function Settings() {
 
@@ -24,7 +26,9 @@ function Settings() {
 
     e.preventDefault();
 
-    alert("Settings Updated Successfully 🚀");
+    toast.success(
+  "Settings Updated Successfully 🚀"
+);
 
     console.log(values);
   };

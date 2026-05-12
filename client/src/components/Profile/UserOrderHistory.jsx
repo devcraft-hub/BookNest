@@ -7,6 +7,9 @@ import axios from "axios";
 
 import Loader from "../Loader/Loader";
 
+import { toast }
+from "react-toastify";
+
 import { Link } from "react-router-dom";
 
 function UserOrderHistory() {
@@ -94,7 +97,7 @@ function UserOrderHistory() {
             }
           );
 
-        alert(
+        toast.success(
           response.data.message
         );
 
@@ -158,7 +161,7 @@ function UserOrderHistory() {
 
       } catch (error) {
 
-        alert(
+        toast.error(
           error.response?.data
             ?.message
         );

@@ -13,6 +13,9 @@ import axios from "axios";
 
 import Loader from "../Loader/Loader";
 
+import { toast }
+from "react-toastify";
+
 import BookCard from "../BookCard/BookCard";
 
 import { FaCartShopping } from "react-icons/fa6";
@@ -172,7 +175,7 @@ function ViewBookDetails() {
             { headers }
           );
 
-        alert(
+        toast.success(
           response.data.message
         );
 
@@ -180,7 +183,7 @@ function ViewBookDetails() {
 
       } catch (error) {
 
-        alert(
+        toast.error(
           error.response?.data
             ?.message
         );
@@ -209,13 +212,13 @@ function ViewBookDetails() {
             { headers }
           );
 
-        alert(
+        toast.success(
           response.data.message
         );
 
       } catch (error) {
 
-        alert(
+        toast.error(
           error.response?.data
             ?.message
         );
@@ -241,7 +244,7 @@ function ViewBookDetails() {
           comment.trim() === ""
         ) {
 
-          alert(
+          toast.error(
             "Please write review"
           );
 
@@ -265,7 +268,7 @@ function ViewBookDetails() {
             }
           );
 
-        alert(
+        toast.success(
           response.data.message
         );
 
@@ -285,7 +288,7 @@ function ViewBookDetails() {
 
       } catch (error) {
 
-        alert(
+        toast.error(
           error.response?.data
             ?.message
         );
@@ -315,7 +318,7 @@ function ViewBookDetails() {
             }
           );
 
-        alert(
+        toast.success(
           response.data.message
         );
 
@@ -333,7 +336,7 @@ function ViewBookDetails() {
 
       } catch (error) {
 
-        alert(
+        toast.error(
           error.response?.data
             ?.message
         );
@@ -357,7 +360,7 @@ function ViewBookDetails() {
             }
           );
 
-        alert(
+        toast.success(
           response.data.message
         );
 
@@ -365,7 +368,7 @@ function ViewBookDetails() {
 
       } catch (error) {
 
-        alert(
+        toast.error(
           error.response?.data
             ?.message
         );

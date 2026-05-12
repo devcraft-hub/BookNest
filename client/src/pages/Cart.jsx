@@ -6,6 +6,8 @@ import React, {
 import axios from "axios";
 
 import Loader from "../components/Loader/Loader";
+import { toast }
+from "react-toastify";
 
 import {
   Link,
@@ -232,7 +234,7 @@ const removeFromCart =
           }
         );
 
-      alert(
+      toast.success(
         response.data.message
       );
 
@@ -353,7 +355,7 @@ const placeOrder =
           }
         );
 
-      alert(
+      toast.success(
         response.data.message
       );
 
@@ -377,7 +379,7 @@ const placeOrder =
 
     } catch (error) {
 
-      alert(
+      toast.error(
         error.response?.data
           ?.message
       );
@@ -409,7 +411,7 @@ if (
     "WALLET"
   );
 
-  alert(
+  toast.success(
     "Order placed using wallet balance"
   );
 
@@ -516,14 +518,14 @@ if (
                   "ONLINE"
                    );
 
-                  alert(
+                  toast.success(
                     "Payment Successful"
                   );
                 }
 
               } catch (error) {
 
-                alert(
+                toast.error(
                   "Payment verification failed"
                 );
               }
@@ -548,7 +550,7 @@ if (
 
         console.log(error);
 
-        alert(
+        toast.error(
           error.response?.data
             ?.message
         );

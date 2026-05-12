@@ -7,6 +7,9 @@ import axios from "axios";
 
 import Loader from "../../components/Loader/Loader";
 
+import { toast }
+from "react-toastify";
+
 function AdminUsers() {
 
   const [users, setUsers] =
@@ -80,7 +83,7 @@ function AdminUsers() {
           }
         );
 
-      alert(response.data.message);
+      toast.success(response.data.message);
 
       // update ui
 
@@ -100,7 +103,7 @@ function AdminUsers() {
 
     } catch (error) {
 
-      alert(
+      toast.error(
         error.response?.data?.message
       );
     }
@@ -126,7 +129,7 @@ function AdminUsers() {
           }
         );
 
-      alert(response.data.message);
+      toast.success(response.data.message);
 
       // update ui
 
@@ -146,7 +149,7 @@ function AdminUsers() {
 
     } catch (error) {
 
-      alert(
+      toast.error(
         error.response?.data?.message
       );
     }
