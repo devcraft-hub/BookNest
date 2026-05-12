@@ -28,7 +28,7 @@ function Favourites() {
       try {
 
         const response = await axios.get(
-          "http://localhost:1000/api/v1/get-favourite-books",
+          `${import.meta.env.VITE_API_URL}/api/v1/get-favourite-books`,
           {
             headers,
           }
@@ -57,7 +57,7 @@ function Favourites() {
     try {
 
       const response = await axios.put(
-        `http://localhost:1000/api/v1/remove-book-from-favourite/${bookId}`,
+        `${import.meta.env.VITE_API_URL}/api/v1/remove-book-from-favourite/${bookId}`,
         {},
         {
           headers,

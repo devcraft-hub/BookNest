@@ -48,7 +48,7 @@ function UserOrderHistory() {
           const response =
             await axios.get(
 
-              "http://localhost:1000/api/v1/get-order-history",
+              `${import.meta.env.VITE_API_URL}/api/v1/get-order-history`,
 
               {
                 headers,
@@ -85,7 +85,7 @@ function UserOrderHistory() {
         const response =
           await axios.put(
 
-            `http://localhost:1000/api/v1/cancel-order/${orderId}`,
+            `${import.meta.env.VITE_API_URL}/api/v1/cancel-order/${orderId}`,
 
             {},
 

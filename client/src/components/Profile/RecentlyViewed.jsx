@@ -37,7 +37,7 @@ function RecentlyViewed() {
           const response =
             await axios.get(
 
-              "http://localhost:1000/api/v1/get-recently-viewed",
+              `${import.meta.env.VITE_API_URL}/api/v1/get-recently-viewed`,
 
               {
                 headers,

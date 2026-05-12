@@ -48,7 +48,7 @@ function AllBooks() {
 
       const response =
         await axios.get(
-          "http://localhost:1000/api/v1/get-all-books"
+          `${import.meta.env.VITE_API_URL}/api/v1/get-all-books`
         );
 
       setBooks(response.data.data);
@@ -95,7 +95,7 @@ function AllBooks() {
       const response =
         await axios.get(
 
-          `http://localhost:1000/api/v1/search-books/${search}`
+          `${import.meta.env.VITE_API_URL}/api/v1/search-books/${search}`
         );
 
       setBooks(response.data.data);

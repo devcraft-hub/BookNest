@@ -101,7 +101,7 @@ function ViewBookDetails() {
 
         const response =
           await axios.get(
-            `http://localhost:1000/api/v1/get-book-by-id/${id}`
+            `${import.meta.env.VITE_API_URL}/api/v1/get-book-by-id/${id}`
           );
 
         setBook(response.data.data);
@@ -113,7 +113,7 @@ function ViewBookDetails() {
         const recommended =
           await axios.get(
 
-            `http://localhost:1000/api/v1/recommended-books/${id}`
+            `${import.meta.env.VITE_API_URL}/api/v1/recommended-books/${id}`
           );
 
         setRecommendedBooks(
@@ -130,7 +130,7 @@ function ViewBookDetails() {
 
           await axios.put(
 
-            `http://localhost:1000/api/v1/add-recently-viewed/${id}`,
+            `${import.meta.env.VITE_API_URL}/api/v1/add-recently-viewed/${id}`,
 
             {},
 
@@ -167,7 +167,7 @@ function ViewBookDetails() {
 
         const response =
           await axios.put(
-            `http://localhost:1000/api/v1/add-book-to-favourite/${id}`,
+            `${import.meta.env.VITE_API_URL}/api/v1/add-book-to-favourite/${id}`,
             {},
             { headers }
           );
@@ -204,7 +204,7 @@ function ViewBookDetails() {
 
         const response =
           await axios.put(
-            `http://localhost:1000/api/v1/add-to-cart/${id}`,
+            `${import.meta.env.VITE_API_URL}/api/v1/add-to-cart/${id}`,
             {},
             { headers }
           );
@@ -253,7 +253,7 @@ function ViewBookDetails() {
         const response =
           await axios.put(
 
-            `http://localhost:1000/api/v1/add-review/${id}`,
+            `${import.meta.env.VITE_API_URL}/api/v1/add-review/${id}`,
 
             {
               rating,
@@ -274,7 +274,7 @@ function ViewBookDetails() {
         const updatedBook =
           await axios.get(
 
-            `http://localhost:1000/api/v1/get-book-by-id/${id}`
+            `${import.meta.env.VITE_API_URL}/api/v1/get-book-by-id/${id}`
           );
 
         setBook(
@@ -308,7 +308,7 @@ function ViewBookDetails() {
         const response =
           await axios.delete(
 
-            `http://localhost:1000/api/v1/delete-review/${id}/${reviewId}`,
+            `${import.meta.env.VITE_API_URL}/api/v1/delete-review/${id}/${reviewId}`,
 
             {
               headers,
@@ -324,7 +324,7 @@ function ViewBookDetails() {
         const updatedBook =
           await axios.get(
 
-            `http://localhost:1000/api/v1/get-book-by-id/${id}`
+            `${import.meta.env.VITE_API_URL}/api/v1/get-book-by-id/${id}`
           );
 
         setBook(
@@ -351,7 +351,7 @@ function ViewBookDetails() {
 
         const response =
           await axios.delete(
-            `http://localhost:1000/api/v1/delete-book/${id}`,
+            `${import.meta.env.VITE_API_URL}/api/v1/delete-book/${id}`,
             {
               headers,
             }

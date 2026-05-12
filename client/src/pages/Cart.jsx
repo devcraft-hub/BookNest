@@ -69,7 +69,7 @@ useEffect(() => {
         const response =
           await axios.get(
 
-            "http://localhost:1000/api/v1/get-cart-books",
+            `${import.meta.env.VITE_API_URL}/api/v1/get-cart-books`,
 
             {
               headers,
@@ -87,7 +87,7 @@ useEffect(() => {
         const userResponse =
           await axios.get(
 
-            "http://localhost:1000/api/v1/get-user-information",
+            `${import.meta.env.VITE_API_URL}/api/v1/get-user-information`,
 
             {
               headers,
@@ -125,7 +125,7 @@ const increaseQuantity =
 
       await axios.put(
 
-        `http://localhost:1000/api/v1/increase-quantity/${bookId}`,
+        `${import.meta.env.VITE_API_URL}/api/v1/increase-quantity/${bookId}`,
 
         {},
 
@@ -170,7 +170,7 @@ const decreaseQuantity =
 
       await axios.put(
 
-        `http://localhost:1000/api/v1/decrease-quantity/${bookId}`,
+        `${import.meta.env.VITE_API_URL}/api/v1/decrease-quantity/${bookId}`,
 
         {},
 
@@ -223,7 +223,7 @@ const removeFromCart =
       const response =
         await axios.put(
 
-          `http://localhost:1000/api/v1/remove-from-cart/${bookId}`,
+          `${import.meta.env.VITE_API_URL}/api/v1/remove-from-cart/${bookId}`,
 
           {},
 
@@ -335,7 +335,7 @@ const placeOrder =
       const response =
         await axios.post(
 
-          "http://localhost:1000/api/v1/place-order",
+          `${import.meta.env.VITE_API_URL}/api/v1/place-order`,
 
           {
 
@@ -444,7 +444,7 @@ if (
         const response =
           await axios.post(
 
-            "http://localhost:1000/api/v1/create-order",
+            `${import.meta.env.VITE_API_URL}/api/v1/create-order`,
 
             {
               amount:
@@ -496,7 +496,7 @@ if (
                 const verify =
                   await axios.post(
 
-                    "http://localhost:1000/api/v1/verify-payment",
+                    `${import.meta.env.VITE_API_URL}/api/v1/verify-payment`,
 
                     response,
 

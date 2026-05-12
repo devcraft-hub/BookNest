@@ -19,7 +19,7 @@ const [loading, setLoading] = useState(true);
       try {
 
         const response = await axios.get(
-          "http://localhost:1000/api/v1/get-recent-books"
+          `${import.meta.env.VITE_API_URL}/api/v1/get-recent-books`
         );
 
         setBooks(response.data.data);
